@@ -44,6 +44,16 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="TPB.QueryItem"/>
       </Unit>
+      <Unit>
+        <Filename Value="tpb.tests.query.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="TPB.Tests.Query"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../src/tpb.query.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="TPB.Query"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

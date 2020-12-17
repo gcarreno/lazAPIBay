@@ -6,6 +6,7 @@ uses
   Classes
 , consoletestrunner
 
+, TPB.Tests.Query
 , TPB.Tests.QueryItem
 ;
 

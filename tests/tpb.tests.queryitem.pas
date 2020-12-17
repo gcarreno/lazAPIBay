@@ -15,9 +15,7 @@ uses
 ;
 
 type
-
-  { TTestQueryItem }
-
+{ TTestQueryItem }
   TTestQueryItem= class(TTestCase)
   private
     FQueryItem: TQueryItem;
@@ -127,8 +125,6 @@ end;
 procedure TTestQueryItem.TestQueryItemCreateFromJSON;
 begin
   FQueryItem:= TQueryItem.Create(cJSONQueryItem);
-  FQueryItem.CompressedJSON:= False;
-  WriteLN(FQueryItem.FormatJSON);
   CheckPropertiesFull;
   FQueryItem.Free;
 end;
@@ -143,7 +139,6 @@ end;
 
 
 initialization
-
   RegisterTest(TTestQueryItem);
 end.
 
