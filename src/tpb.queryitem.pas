@@ -29,6 +29,7 @@ type
     FStatus: String;
     FCategory: Integer;
     FIMDB: String;
+    FTotalFound: Integer;
 
     procedure setFAdded(AValue: TDateTime);
     procedure setFCategory(AValue: Integer);
@@ -52,6 +53,7 @@ type
     function getAsJSONObject: TJSONObject;
     function getAsJSONData: TJSONData;
     function getAsStream: TStream;
+    procedure setTotalFound(AValue: Integer);
   protected
   public
     constructor Create;
@@ -102,6 +104,9 @@ type
     property IMDB: String
       read FIMDB
       write setFIMDB;
+    property TotalFound: Integer
+      read FTotalFound
+      write setTotalFound;
 
     property AsJSON: String
       read getAsJSON;
@@ -134,6 +139,7 @@ const
   cJSONStatus = 'status';
   cJSONCategory = 'category';
   cJSONIMDB = 'imdb';
+  cJSONTotalFound = 'total_found';
 
 { TQueryItem }
 
@@ -222,18 +228,27 @@ begin
 end;
 
 procedure TQueryItem.setFromJSONObject(const AJSONObject: TJSONObject);
+var
+  sTmp: String;
 begin
-  FId:= AJSONObject.Get(cJSONId, FId);
+  sTmp:=AJSONObject.Get(cJSONId, '0');
+  FId:= StrToInt(sTmp);
   FName:= AJSONObject.Get(cJSONName, FName);
   FInfoHash:= AJSONObject.Get(cJSONInfoHash, FInfoHash);
-  FLeechers:= AJSONObject.Get(cJSONLeechers, FLeechers);
-  FSeeders:= AJSONObject.Get(cJSONSeeders, FSeeders);
-  FNumFiles:= AJSONObject.Get(cJSONNumFiles, FNumFiles);
-  FSize:= AJSONObject.Get(cJSONSize, FSize);
+  sTmp:= AJSONObject.Get(cJSONLeechers, '-1');
+  FLeechers:= StrToInt(sTmp);
+  sTmp:= AJSONObject.Get(cJSONSeeders, '-1');
+  FSeeders:= StrToInt(sTmp);
+  sTmp:= AJSONObject.Get(cJSONNumFiles, '0');
+  FNumFiles:= StrToInt(sTmp);
+  sTmp:= AJSONObject.Get(cJSONSize, '0');
+  FSize:= StrToInt(sTmp);
   FUsername:= AJSONObject.Get(cJSONUsername, FUsername);
-  FAdded:= UnixToDateTime(AJSONObject.Get(cJSONAdded, DateTimeToUnix(FAdded)));
+  sTmp:= AJSONObject.Get(cJSONAdded, '0');
+  FAdded:= UnixToDateTime(StrToInt(sTmp));
   FStatus:= AJSONObject.Get(cJSONStatus, FStatus);
-  FCategory:= AJSONObject.Get(cJSONCategory, FCategory);
+  sTmp:= AJSONObject.Get(cJSONCategory, '-1');
+  FCategory:= StrToInt(sTmp);
   FIMDB:= AJSONObject.Get(cJSONIMDB, FIMDB);
 end;
 
@@ -271,18 +286,19 @@ end;
 function TQueryItem.getAsJSONObject: TJSONObject;
 begin
   Result:= TJSONObject.Create;
-  Result.Add(cJSONId, FId);
+  Result.Add(cJSONId, IntToStr(FId));
   Result.Add(cJSONName, FName);
   Result.Add(cJSONInfoHash, FInfoHash);
-  Result.Add(cJSONLeechers, FLeechers);
-  Result.Add(cJSONSeeders, FSeeders);
-  Result.Add(cJSONNumFiles, FNumFiles);
-  Result.Add(cJSONSize, FSize);
+  Result.Add(cJSONLeechers, IntToStr(FLeechers));
+  Result.Add(cJSONSeeders, IntToStr(FSeeders));
+  Result.Add(cJSONNumFiles, IntToStr(FNumFiles));
+  Result.Add(cJSONSize, IntToStr(FSize));
   Result.Add(cJSONUsername, FUsername);
-  Result.Add(cJSONAdded, DateTimeToUnix(FAdded));
+  Result.Add(cJSONAdded, IntToStr(DateTimeToUnix(FAdded)));
   Result.Add(cJSONStatus, FStatus);
-  Result.Add(cJSONCategory, FCategory);
+  Result.Add(cJSONCategory, IntToStr(FCategory));
   Result.Add(cJSONIMDB, FIMDB);
+  Result.Add(cJSONTotalFound, IntToStr(FTotalFound))
 end;
 
 function TQueryItem.getAsJSONData: TJSONData;
@@ -295,6 +311,12 @@ begin
   Result:= TStringStream.Create(getAsJSON);
 end;
 
+procedure TQueryItem.setTotalFound(AValue: Integer);
+begin
+  if FTotalFound=AValue then Exit;
+  FTotalFound:=AValue;
+end;
+
 constructor TQueryItem.Create;
 begin
   FId:= 0;
@@ -305,10 +327,11 @@ begin
   FNumFiles:= 0;
   FSize:= 0;
   FUsername:= '';
-  FAdded:= 0;
+  FAdded:= 0.0;
   FStatus:= '';
   FCategory:= -1;
   FIMDB:= '';
+  FTotalFound:= -1;
 end;
 
 constructor TQueryItem.Create(const AJSON: String);
