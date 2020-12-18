@@ -25,7 +25,7 @@ var
 begin
   Application := TTestlazAPIBayRunner.Create(nil);
   Application.Initialize;
-  Application.Title := 'FPCUnit Console test runner';
+  Application.Title:='testlazapibay';
   Application.Run;
   Application.Free;
 end.
