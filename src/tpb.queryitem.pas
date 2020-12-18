@@ -250,6 +250,8 @@ begin
   sTmp:= AJSONObject.Get(cJSONCategory, '-1');
   FCategory:= StrToInt(sTmp);
   FIMDB:= AJSONObject.Get(cJSONIMDB, FIMDB);
+  sTmp:= AJSONObject.Get(cJSONTotalFound, '-1');
+  FTotalFound:= StrToInt(sTmp);
 end;
 
 procedure TQueryItem.setFromJSONData(const AJSONData: TJSONData);

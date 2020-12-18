@@ -81,6 +81,7 @@ begin
   AssertEquals('Query Item Status empty', '', FQueryItem.Status);
   AssertEquals('Query Item Category -1', -1, FQueryItem.Category);
   AssertEquals('Query Item IMDB empty', '', FQueryItem.IMDB);
+  AssertEquals('Query Item Total Found -1', -1, FQueryItem.TotalFound);
 end;
 
 procedure TTestQueryItem.CheckPropertiesFull;
@@ -97,6 +98,7 @@ begin
   AssertEquals('Query Item Status vip', 'vip', FQueryItem.Status);
   AssertEquals('Query Item Category 205', 205, FQueryItem.Category);
   AssertEquals('Query Item IMDB tt0364845', 'tt0364845', FQueryItem.IMDB);
+  AssertEquals('Query Item Total Found -1', -1, FQueryItem.TotalFound);
 end;
 
 procedure TTestQueryItem.CheckPropertiesError;
@@ -113,6 +115,7 @@ begin
   AssertEquals('Query Item Status member', 'member', FQueryItem.Status);
   AssertEquals('Query Item Category 0', 0, FQueryItem.Category);
   AssertEquals('Query Item IMDB empty', '', FQueryItem.IMDB);
+  AssertEquals('Query Item Total Found 1', 1, FQueryItem.TotalFound);
 end;
 
 procedure TTestQueryItem.TestQueryItemCreate;
