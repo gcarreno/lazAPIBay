@@ -10,6 +10,7 @@ object frmMain: TfrmMain
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnDestroy = FormDestroy
+  LCLVersion = '2.1.0.0'
   object panQuery: TPanel
     Left = 0
     Height = 50
@@ -36,7 +37,7 @@ object frmMain: TfrmMain
     end
   end
   object psMain: TPairSplitter
-    Cursor = crVSplit
+    Cursor = crDefault
     Left = 0
     Height = 517
     Top = 50
@@ -53,6 +54,7 @@ object frmMain: TfrmMain
       ClientWidth = 1012
       ClientHeight = 350
       object psQuery: TPairSplitter
+        Cursor = crDefault
         Left = 0
         Height = 350
         Top = 0
