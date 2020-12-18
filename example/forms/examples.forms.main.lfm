@@ -9,7 +9,7 @@ object frmMain: TfrmMain
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
-  LCLVersion = '2.1.0.0'
+  LCLVersion = '2.0.6.0'
   object panQuery: TPanel
     Left = 0
     Height = 50
@@ -73,8 +73,8 @@ object frmMain: TfrmMain
     end
   end
   object alMain: TActionList
-    Left = 881
-    Top = 121
+    left = 881
+    top = 121
     object actTPBQuery: TAction
       Category = 'TPB'
       Caption = '&Search'

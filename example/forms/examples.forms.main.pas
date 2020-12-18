@@ -56,10 +56,12 @@ implementation
 uses
   LCLType
 , fphttpclient
-//, ssockets
-//, fpopenssl
+{$IF FPC_FULLVERSION > 30004}
 , opensslsockets
-//, sslsockets
+{$ELSE}
+, sslsockets
+, fpopenssl
+{$ENDIF}
 ;
 
 const
@@ -106,8 +108,8 @@ begin
     Log(Format('Searching for "%s"', [edtQuery.Text]));
     sURL:= Format(cBaseURL + cURLQuery, [edtQuery.Text, 200]);
     http:= TFPHTTPClient.Create(Self);
+    slResponse:= TStringList.Create;
     try
-      slResponse:= TStringList.Create;
       http.Get(sURL, slResponse);
       if http.ResponseStatusCode = 200 then
       begin
@@ -116,6 +118,10 @@ begin
         Query.CompressedJSON:= False;
         Log(Query.FormatJSON);
         Query.Free;
+      end
+      else
+      begin
+        Log(Format('Error: %d', [http.ResponseStatusCode]));
       end;
     finally
       slResponse.Free;
