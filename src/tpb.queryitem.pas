@@ -242,7 +242,7 @@ begin
   sTmp:= AJSONObject.Get(cJSONNumFiles, '0');
   FNumFiles:= StrToInt(sTmp);
   sTmp:= AJSONObject.Get(cJSONSize, '0');
-  FSize:= StrToInt(sTmp);
+  FSize:= StrToInt64(sTmp);
   FUsername:= AJSONObject.Get(cJSONUsername, FUsername);
   sTmp:= AJSONObject.Get(cJSONAdded, '0');
   FAdded:= UnixToDateTime(StrToInt(sTmp));
