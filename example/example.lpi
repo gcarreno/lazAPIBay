@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
-    <Version Value="11"/>
+    <Version Value="12"/>
     <General>
+      <Flags>
+        <CompatibilityMode Value="True"/>
+      </Flags>
       <SessionStorage Value="InProjectDir"/>
-      <MainUnit Value="0"/>
       <Title Value="example"/>
       <Scaled Value="True"/>
       <ResourceType Value="res"/>
@@ -23,14 +25,13 @@
     </PublishOptions>
     <RunParams>
       <FormatVersion Value="2"/>
-      <Modes Count="0"/>
     </RunParams>
     <RequiredPackages Count="1">
       <Item1>
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="2">
+    <Units Count="4">
       <Unit0>
         <Filename Value="example.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -43,6 +44,15 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Examples.Forms.Main"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="../src/tpb.query.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="../src/tpb.queryitem.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="TPB.QueryItem"/>
+      </Unit3>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

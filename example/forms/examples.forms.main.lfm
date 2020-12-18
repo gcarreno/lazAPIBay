@@ -9,7 +9,7 @@ object frmMain: TfrmMain
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
-  LCLVersion = '2.0.6.0'
+  OnDestroy = FormDestroy
   object panQuery: TPanel
     Left = 0
     Height = 50
@@ -36,7 +36,7 @@ object frmMain: TfrmMain
     end
   end
   object psMain: TPairSplitter
-    Cursor = crDefault
+    Cursor = crVSplit
     Left = 0
     Height = 517
     Top = 50
@@ -50,6 +50,144 @@ object frmMain: TfrmMain
       Height = 350
       Top = 0
       Width = 1012
+      ClientWidth = 1012
+      ClientHeight = 350
+      object psQuery: TPairSplitter
+        Left = 0
+        Height = 350
+        Top = 0
+        Width = 1012
+        Align = alClient
+        Position = 400
+        object pssList: TPairSplitterSide
+          Cursor = crArrow
+          Left = 0
+          Height = 350
+          Top = 0
+          Width = 400
+          ClientWidth = 400
+          ClientHeight = 350
+          object lbList: TListBox
+            Left = 0
+            Height = 350
+            Top = 0
+            Width = 400
+            Align = alClient
+            ItemHeight = 0
+            OnSelectionChange = lbListSelectionChange
+            ScrollWidth = 398
+            TabOrder = 0
+            TopIndex = -1
+          end
+        end
+        object pssData: TPairSplitterSide
+          Cursor = crArrow
+          Left = 405
+          Height = 350
+          Top = 0
+          Width = 607
+          ClientWidth = 607
+          ClientHeight = 350
+          object panData: TPanel
+            Left = 0
+            Height = 350
+            Top = 0
+            Width = 607
+            Align = alClient
+            ClientHeight = 350
+            ClientWidth = 607
+            TabOrder = 0
+            object lblId: TLabel
+              Left = 16
+              Height = 17
+              Top = 8
+              Width = 17
+              Caption = 'Id:'
+              ParentColor = False
+            end
+            object lblName: TLabel
+              Left = 16
+              Height = 17
+              Top = 32
+              Width = 44
+              Caption = 'Name:'
+              ParentColor = False
+            end
+            object lblHash: TLabel
+              Left = 16
+              Height = 17
+              Top = 56
+              Width = 37
+              Caption = 'Hash:'
+              ParentColor = False
+            end
+            object lblLeechers: TLabel
+              Left = 16
+              Height = 17
+              Top = 104
+              Width = 63
+              Caption = 'Leechers:'
+              ParentColor = False
+            end
+            object lblSeeders: TLabel
+              Left = 15
+              Height = 17
+              Top = 80
+              Width = 58
+              Caption = 'Seeders:'
+              ParentColor = False
+            end
+            object lblSize: TLabel
+              Left = 16
+              Height = 17
+              Top = 128
+              Width = 31
+              Caption = 'Size:'
+              ParentColor = False
+            end
+            object lblUsername: TLabel
+              Left = 16
+              Height = 17
+              Top = 152
+              Width = 72
+              Caption = 'Username:'
+              ParentColor = False
+            end
+            object lblAdded: TLabel
+              Left = 16
+              Height = 17
+              Top = 176
+              Width = 49
+              Caption = 'Added:'
+              ParentColor = False
+            end
+            object lblStatus: TLabel
+              Left = 15
+              Height = 17
+              Top = 200
+              Width = 47
+              Caption = 'Status:'
+              ParentColor = False
+            end
+            object lblCategory: TLabel
+              Left = 16
+              Height = 17
+              Top = 224
+              Width = 65
+              Caption = 'Category:'
+              ParentColor = False
+            end
+            object lblIMDB: TLabel
+              Left = 15
+              Height = 17
+              Top = 248
+              Width = 40
+              Caption = 'IMDB:'
+              ParentColor = False
+            end
+          end
+        end
+      end
     end
     object pssLog: TPairSplitterSide
       Cursor = crArrow
@@ -73,8 +211,8 @@ object frmMain: TfrmMain
     end
   end
   object alMain: TActionList
-    left = 881
-    top = 121
+    Left = 881
+    Top = 121
     object actTPBQuery: TAction
       Category = 'TPB'
       Caption = '&Search'
