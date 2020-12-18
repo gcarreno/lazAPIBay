@@ -1,0 +1,89 @@
+object frmMain: TfrmMain
+  Left = 338
+  Height = 567
+  Top = 250
+  Width = 1012
+  Caption = 'frmMain'
+  ClientHeight = 567
+  ClientWidth = 1012
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  LCLVersion = '2.1.0.0'
+  object panQuery: TPanel
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 1012
+    Align = alTop
+    ClientHeight = 50
+    ClientWidth = 1012
+    TabOrder = 0
+    object edtQuery: TEdit
+      Left = 8
+      Height = 33
+      Top = 8
+      Width = 504
+      TabOrder = 0
+    end
+    object btnTPBQuery: TButton
+      Left = 520
+      Height = 33
+      Top = 8
+      Width = 75
+      Action = actTPBQuery
+      TabOrder = 1
+    end
+  end
+  object psMain: TPairSplitter
+    Cursor = crDefault
+    Left = 0
+    Height = 517
+    Top = 50
+    Width = 1012
+    Align = alClient
+    Position = 350
+    SplitterType = pstVertical
+    object pssQueryItems: TPairSplitterSide
+      Cursor = crArrow
+      Left = 0
+      Height = 350
+      Top = 0
+      Width = 1012
+    end
+    object pssLog: TPairSplitterSide
+      Cursor = crArrow
+      Left = 0
+      Height = 162
+      Top = 355
+      Width = 1012
+      ClientWidth = 1012
+      ClientHeight = 162
+      object memLog: TMemo
+        Left = 0
+        Height = 162
+        Top = 0
+        Width = 1012
+        Align = alClient
+        Font.Name = 'Fira Code'
+        ParentFont = False
+        ScrollBars = ssAutoVertical
+        TabOrder = 0
+      end
+    end
+  end
+  object alMain: TActionList
+    Left = 881
+    Top = 121
+    object actTPBQuery: TAction
+      Category = 'TPB'
+      Caption = '&Search'
+      OnExecute = actTPBQueryExecute
+    end
+    object actFileExit: TFileExit
+      Category = 'File'
+      Caption = 'E&xit'
+      Hint = 'Exit'
+    end
+  end
+end
