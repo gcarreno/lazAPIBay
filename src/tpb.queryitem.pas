@@ -167,74 +167,74 @@ const
 
 procedure TQueryItem.setFId(AValue: Int64);
 begin
-  if FId=AValue then Exit;
-  FId:=AValue;
+  if FId = AValue then Exit;
+  FId:= AValue;
 end;
 
 procedure TQueryItem.setFIMDB(AValue: String);
 begin
-  if FIMDB=AValue then Exit;
-  FIMDB:=AValue;
+  if FIMDB = AValue then Exit;
+  FIMDB:= AValue;
 end;
 
 procedure TQueryItem.setFAdded(AValue: TDateTime);
 begin
-  if FAdded=AValue then Exit;
-  FAdded:=AValue;
+  if FAdded = AValue then Exit;
+  FAdded:= AValue;
 end;
 
 procedure TQueryItem.setFCategory(AValue: Integer);
 begin
-  if FCategory=AValue then Exit;
-  FCategory:=AValue;
+  if FCategory = AValue then Exit;
+  FCategory:= AValue;
 end;
 
 procedure TQueryItem.setFInfoHash(AValue: String);
 begin
-  if FInfoHash=AValue then Exit;
-  FInfoHash:=AValue;
+  if FInfoHash = AValue then Exit;
+  FInfoHash:= AValue;
 end;
 
 procedure TQueryItem.setFLeechers(AValue: Integer);
 begin
-  if FLeechers=AValue then Exit;
-  FLeechers:=AValue;
+  if FLeechers = AValue then Exit;
+  FLeechers:= AValue;
 end;
 
 procedure TQueryItem.setFName(AValue: String);
 begin
-  if FName=AValue then Exit;
-  FName:=AValue;
+  if FName = AValue then Exit;
+  FName:= AValue;
 end;
 
 procedure TQueryItem.setFNumFiles(AValue: Integer);
 begin
-  if FNumFiles=AValue then Exit;
-  FNumFiles:=AValue;
+  if FNumFiles = AValue then Exit;
+  FNumFiles:= AValue;
 end;
 
 procedure TQueryItem.setFSeeders(AValue: Integer);
 begin
-  if FSeeders=AValue then Exit;
-  FSeeders:=AValue;
+  if FSeeders = AValue then Exit;
+  FSeeders:= AValue;
 end;
 
 procedure TQueryItem.setFSize(AValue: Int64);
 begin
-  if FSize=AValue then Exit;
-  FSize:=AValue;
+  if FSize = AValue then Exit;
+  FSize:= AValue;
 end;
 
 procedure TQueryItem.setFStatus(AValue: String);
 begin
-  if FStatus=AValue then Exit;
-  FStatus:=AValue;
+  if FStatus = AValue then Exit;
+  FStatus:= AValue;
 end;
 
 procedure TQueryItem.setFUsername(AValue: String);
 begin
-  if FUsername=AValue then Exit;
-  FUsername:=AValue;
+  if FUsername = AValue then Exit;
+  FUsername:= AValue;
 end;
 
 procedure TQueryItem.setFromJSON(const AJSON: String);
