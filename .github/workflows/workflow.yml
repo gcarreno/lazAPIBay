@@ -23,9 +23,9 @@ jobs:
       uses: gcarreno/setup-lazarus@v2.2.6
       with:
         lazarus-version: ${{ matrix.lazarus-versions }}
-    - name: Build the Main App
-      run: lazbuild "example/example.lpi"
+    - name: Build the Example App
+      run: lazbuild --bm=Release "example/example.lpi"
     - name: Build the Test App
-      run: lazbuild "tests/testlazapibay.lpi"
+      run: lazbuild --bm=Release "tests/testlazapibay.lpi"
     - name: Run the Test App
       run: bin/testlazapibay "--all" "--format=plain"
