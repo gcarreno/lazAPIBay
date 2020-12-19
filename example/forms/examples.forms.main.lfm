@@ -3,14 +3,13 @@ object frmMain: TfrmMain
   Height = 567
   Top = 250
   Width = 1012
-  Caption = 'frmMain'
+  Caption = 'lazAPIBay Example'
   ClientHeight = 567
   ClientWidth = 1012
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  LCLVersion = '2.1.0.0'
   object panQuery: TPanel
     Left = 0
     Height = 50
@@ -37,7 +36,6 @@ object frmMain: TfrmMain
     end
   end
   object psMain: TPairSplitter
-    Cursor = crDefault
     Left = 0
     Height = 517
     Top = 50
@@ -54,7 +52,7 @@ object frmMain: TfrmMain
       ClientWidth = 1012
       ClientHeight = 350
       object psQuery: TPairSplitter
-        Cursor = crDefault
+        Cursor = crVSplit
         Left = 0
         Height = 350
         Top = 0

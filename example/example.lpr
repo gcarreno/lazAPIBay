@@ -39,6 +39,7 @@ uses
 
 begin
   RequireDerivedFormResource:=True;
+  Application.Title:='lazAPIBay Example';
   Application.Scaled:=True;
   Application.Initialize;
   Application.CreateForm(TfrmMain, frmMain);

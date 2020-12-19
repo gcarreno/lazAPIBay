@@ -117,6 +117,8 @@ procedure TfrmMain.FormCreate(Sender: TObject);
 begin
   Log('Satrting');
   FQuery:= nil;
+  psMain.Cursor:= crVSplit;
+  psQuery.Cursor:= crHSplit;
 {$IFDEF LINUX}
   actFileExit.ShortCut := KeyToShortCut(VK_Q, [ssCtrl]);
 {$ENDIF}
