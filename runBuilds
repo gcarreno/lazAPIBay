@@ -59,6 +59,8 @@ $LAZBUILD -B --bm=Release-linux-i386 --os=Linux --cpu=i386 ${LPIFILE} 2>&1 > ${L
 if [ -f ${DIRLIN32}/${BINLINUX} ]; then
   echo "  Found Linux 32"
   pushd ${DIRLIN32} > /dev/null
+  echo "  Stripping ${BINLINUX}"
+  strip ${BINLINUX}
   echo "  Packaging ${DISTPATH}/${DISTNAME}-${VERSION}-linux-i386.tgz"
   echo "---"
   tar -v --gzip --create --file ${DISTPATH}/${DISTNAME}-${VERSION}-linux-i386.tgz ${BINLINUX}
@@ -74,6 +76,8 @@ $LAZBUILD -B --bm=Release --os=Linux --cpu=x86_64 ${LPIFILE} 2>&1 > ${LOGLIN64}
 if [ -f ${DIRLIN64}/${BINLINUX} ]; then
   echo "  Found Linux 64"
   pushd ${DIRLIN64} > /dev/null
+  echo "  Stripping ${BINLINUX}"
+  strip ${BINLINUX}
   echo "  Packaging ${DISTPATH}/${DISTNAME}-${VERSION}-linux-x86_64.tgz"
   echo "---"
   tar -v --gzip --create --file ${DISTPATH}/${DISTNAME}-${VERSION}-linux-x86_64.tgz ${BINLINUX}
