@@ -59,8 +59,10 @@ $LAZBUILD -B --bm=Release-linux-i386 --os=Linux --cpu=i386 ${LPIFILE} 2>&1 > ${L
 if [ -f ${DIRLIN32}/${BINLINUX} ]; then
   echo "  Found Linux 32"
   pushd ${DIRLIN32} > /dev/null
-  echo -ne "Packaging\n  "
+  echo "  Packaging ${DISTPATH}/${DISTNAME}-${VERSION}-linux-i386.tgz"
+  echo "---"
   tar -v --gzip --create --file ${DISTPATH}/${DISTNAME}-${VERSION}-linux-i386.tgz ${BINLINUX}
+  echo "---"
   popd > /dev/null
 else
   echo "  Linux 32 NOT found"
@@ -72,8 +74,10 @@ $LAZBUILD -B --bm=Release --os=Linux --cpu=x86_64 ${LPIFILE} 2>&1 > ${LOGLIN64}
 if [ -f ${DIRLIN64}/${BINLINUX} ]; then
   echo "  Found Linux 64"
   pushd ${DIRLIN64} > /dev/null
-  echo -ne "Packaging\n  "
+  echo "  Packaging ${DISTPATH}/${DISTNAME}-${VERSION}-linux-x86_64.tgz"
+  echo "---"
   tar -v --gzip --create --file ${DISTPATH}/${DISTNAME}-${VERSION}-linux-x86_64.tgz ${BINLINUX}
+  echo "---"
   popd > /dev/null
 else
   echo "  Linux 64 NOT found"
@@ -85,8 +89,10 @@ $LAZBUILD -B --bm=Release --os=win32 --cpu=i386 ${LPIFILE} 2>&1 > $LOGWIN32
 if [ -f ${DIRWIN32}/${BINWIN} ]; then
   echo "  Found Win32"
   pushd ${DIRWIN32} > /dev/null
-  echo Packaging
+  echo "  Packaging ${DISTPATH}/${DISTNAME}-${VERSION}-win32.zip"
+  echo "---"
   zip  ${DISTPATH}/${DISTNAME}-${VERSION}-win32.zip ${BINWIN}
+  echo "---"
   popd > /dev/null
 else
   echo "  Win32 NOT found"
@@ -98,8 +104,10 @@ $LAZBUILD -B --bm=Release --os=win64 --cpu=x86_64 ${LPIFILE} 2>&1 > $LOGWIN64
 if [ -f ${DIRWIN64}/${BINWIN} ]; then
   echo "  Found Win64"
   pushd ${DIRWIN64} > /dev/null
-  echo Packaging
+  echo "  Packaging ${DISTPATH}/${DISTNAME}-${VERSION}-win64.zip"
+  echo "---"
   zip  ${DISTPATH}/${DISTNAME}-${VERSION}-win64.zip ${BINWIN}
+  echo "---"
   popd > /dev/null
 else
   echo "  Win64 NOT found"
