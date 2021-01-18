@@ -12,11 +12,11 @@ object frmMain: TfrmMain
   OnDestroy = FormDestroy
   object panQuery: TPanel
     Left = 0
-    Height = 50
+    Height = 42
     Top = 0
     Width = 1012
     Align = alTop
-    ClientHeight = 50
+    ClientHeight = 42
     ClientWidth = 1012
     TabOrder = 0
     object edtQuery: TEdit
@@ -24,11 +24,12 @@ object frmMain: TfrmMain
       Height = 33
       Top = 8
       Width = 504
+      OnKeyPress = edtQueryKeyPress
       TabOrder = 0
     end
     object btnTPBQuery: TButton
       Left = 520
-      Height = 33
+      Height = 24
       Top = 8
       Width = 75
       Action = actTPBQuery
@@ -37,8 +38,8 @@ object frmMain: TfrmMain
   end
   object psMain: TPairSplitter
     Left = 0
-    Height = 517
-    Top = 50
+    Height = 525
+    Top = 42
     Width = 1012
     Align = alClient
     Position = 350
@@ -58,44 +59,44 @@ object frmMain: TfrmMain
         Top = 0
         Width = 1012
         Align = alClient
-        Position = 400
+        Position = 450
         object pssList: TPairSplitterSide
           Cursor = crArrow
           Left = 0
           Height = 350
           Top = 0
-          Width = 400
-          ClientWidth = 400
+          Width = 450
+          ClientWidth = 450
           ClientHeight = 350
           object lbList: TListBox
             Left = 0
             Height = 350
             Top = 0
-            Width = 400
+            Width = 450
             Align = alClient
             ItemHeight = 0
             OnSelectionChange = lbListSelectionChange
-            ScrollWidth = 398
+            ScrollWidth = 448
             TabOrder = 0
             TopIndex = -1
           end
         end
         object pssData: TPairSplitterSide
           Cursor = crArrow
-          Left = 405
+          Left = 455
           Height = 350
           Top = 0
-          Width = 607
-          ClientWidth = 607
+          Width = 557
+          ClientWidth = 557
           ClientHeight = 350
           object panData: TPanel
             Left = 0
             Height = 350
             Top = 0
-            Width = 607
+            Width = 557
             Align = alClient
             ClientHeight = 350
-            ClientWidth = 607
+            ClientWidth = 557
             TabOrder = 0
             object lblId: TLabel
               Left = 16
@@ -192,14 +193,14 @@ object frmMain: TfrmMain
     object pssLog: TPairSplitterSide
       Cursor = crArrow
       Left = 0
-      Height = 162
+      Height = 170
       Top = 355
       Width = 1012
       ClientWidth = 1012
-      ClientHeight = 162
+      ClientHeight = 170
       object memLog: TMemo
         Left = 0
-        Height = 162
+        Height = 170
         Top = 0
         Width = 1012
         Align = alClient

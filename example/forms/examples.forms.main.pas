@@ -75,6 +75,7 @@ type
     pssLog: TPairSplitterSide;
     panQuery: TPanel;
     procedure actTPBQueryExecute(Sender: TObject);
+    procedure edtQueryKeyPress(Sender: TObject; var Key: char);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure FormCreate(Sender: TObject);
@@ -273,6 +274,14 @@ begin
       http.Free;
       actTPBQuery.Enabled:= True;
     end;
+  end;
+end;
+
+procedure TfrmMain.edtQueryKeyPress(Sender: TObject; var Key: char);
+begin
+  if Key = #13 then
+  begin
+    actTPBQueryExecute(btnTPBQuery);
   end;
 end;
 
