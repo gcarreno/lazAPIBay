@@ -116,7 +116,7 @@ const
 { TfrmMain }
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
-  Log('Satrting');
+  Log('Starting');
   FQuery:= nil;
   psMain.Cursor:= crVSplit;
   psQuery.Cursor:= crHSplit;

@@ -12,15 +12,15 @@ object frmMain: TfrmMain
   OnDestroy = FormDestroy
   object panQuery: TPanel
     Left = 0
-    Height = 42
+    Height = 44
     Top = 0
     Width = 1012
     Align = alTop
-    ClientHeight = 42
+    ClientHeight = 44
     ClientWidth = 1012
     TabOrder = 0
     object edtQuery: TEdit
-      Left = 8
+      Left = 0
       Height = 33
       Top = 8
       Width = 504
@@ -28,8 +28,8 @@ object frmMain: TfrmMain
       TabOrder = 0
     end
     object btnTPBQuery: TButton
-      Left = 520
-      Height = 24
+      Left = 504
+      Height = 32
       Top = 8
       Width = 75
       Action = actTPBQuery
@@ -38,8 +38,8 @@ object frmMain: TfrmMain
   end
   object psMain: TPairSplitter
     Left = 0
-    Height = 525
-    Top = 42
+    Height = 523
+    Top = 44
     Width = 1012
     Align = alClient
     Position = 350
@@ -193,14 +193,14 @@ object frmMain: TfrmMain
     object pssLog: TPairSplitterSide
       Cursor = crArrow
       Left = 0
-      Height = 170
+      Height = 168
       Top = 355
       Width = 1012
       ClientWidth = 1012
-      ClientHeight = 170
+      ClientHeight = 168
       object memLog: TMemo
         Left = 0
-        Height = 170
+        Height = 168
         Top = 0
         Width = 1012
         Align = alClient
