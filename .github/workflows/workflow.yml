@@ -30,6 +30,6 @@ jobs:
       if: ${{ matrix.operating-system == 'macos-latest' }}
       run: lazbuild -B --bm=Release --ws=cocoa "example/example.lpi"
     - name: Build the Test App
-      run: lazbuild -B --bm=Release "tests/testlazapibay.lpi"
+      run: lazbuild -B --bm=Debug "tests/testlazapibay.lpi"
     - name: Run the Test App
       run: bin/testlazapibay "--all" "--format=plain"
