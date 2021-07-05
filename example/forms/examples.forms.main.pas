@@ -244,6 +244,7 @@ var
   slResponse: TStringList;
 begin
   actTPBQuery.Enabled:= False;
+  edtQuery.Enabled:= False;
   Application.ProcessMessages;
   if Length(edtQuery.Text) > 0 then
   begin
@@ -272,7 +273,9 @@ begin
     finally
       slResponse.Free;
       http.Free;
+      edtQuery.Enabled:= True;
       actTPBQuery.Enabled:= True;
+      Application.ProcessMessages;
     end;
   end;
 end;

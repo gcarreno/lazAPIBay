@@ -10,6 +10,7 @@ object frmMain: TfrmMain
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnDestroy = FormDestroy
+  LCLVersion = '2.3.0.0'
   object panQuery: TPanel
     Left = 0
     Height = 44
@@ -37,6 +38,7 @@ object frmMain: TfrmMain
     end
   end
   object psMain: TPairSplitter
+    Cursor = crDefault
     Left = 0
     Height = 523
     Top = 44
@@ -53,7 +55,7 @@ object frmMain: TfrmMain
       ClientWidth = 1012
       ClientHeight = 350
       object psQuery: TPairSplitter
-        Cursor = crVSplit
+        Cursor = crDefault
         Left = 0
         Height = 350
         Top = 0
@@ -104,7 +106,6 @@ object frmMain: TfrmMain
               Top = 8
               Width = 17
               Caption = 'Id:'
-              ParentColor = False
             end
             object lblName: TLabel
               Left = 16
@@ -112,7 +113,6 @@ object frmMain: TfrmMain
               Top = 32
               Width = 44
               Caption = 'Name:'
-              ParentColor = False
             end
             object lblHash: TLabel
               Left = 16
@@ -120,7 +120,6 @@ object frmMain: TfrmMain
               Top = 56
               Width = 37
               Caption = 'Hash:'
-              ParentColor = False
             end
             object lblLeechers: TLabel
               Left = 16
@@ -128,7 +127,6 @@ object frmMain: TfrmMain
               Top = 104
               Width = 63
               Caption = 'Leechers:'
-              ParentColor = False
             end
             object lblSeeders: TLabel
               Left = 15
@@ -136,7 +134,6 @@ object frmMain: TfrmMain
               Top = 80
               Width = 58
               Caption = 'Seeders:'
-              ParentColor = False
             end
             object lblSize: TLabel
               Left = 16
@@ -144,7 +141,6 @@ object frmMain: TfrmMain
               Top = 128
               Width = 31
               Caption = 'Size:'
-              ParentColor = False
             end
             object lblUsername: TLabel
               Left = 16
@@ -152,7 +148,6 @@ object frmMain: TfrmMain
               Top = 152
               Width = 72
               Caption = 'Username:'
-              ParentColor = False
             end
             object lblAdded: TLabel
               Left = 16
@@ -160,7 +155,6 @@ object frmMain: TfrmMain
               Top = 176
               Width = 49
               Caption = 'Added:'
-              ParentColor = False
             end
             object lblStatus: TLabel
               Left = 15
@@ -168,7 +162,6 @@ object frmMain: TfrmMain
               Top = 200
               Width = 47
               Caption = 'Status:'
-              ParentColor = False
             end
             object lblCategory: TLabel
               Left = 16
@@ -176,7 +169,6 @@ object frmMain: TfrmMain
               Top = 224
               Width = 65
               Caption = 'Category:'
-              ParentColor = False
             end
             object lblIMDB: TLabel
               Left = 15
@@ -184,7 +176,6 @@ object frmMain: TfrmMain
               Top = 248
               Width = 40
               Caption = 'IMDB:'
-              ParentColor = False
             end
           end
         end
