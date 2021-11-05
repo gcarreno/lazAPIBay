@@ -226,7 +226,7 @@ begin
     begin
       lbList.Items.Add(QueryItem.Name);
     end;
-    lblId.      Caption:= 'Id';
+    lblId.      Caption:= 'Id:';
     lblName.    Caption:= 'Name:';
     lblHash.    Caption:= 'Hash:';
     lblLeechers.Caption:= 'Leechers:';
@@ -281,9 +281,9 @@ begin
     finally
       slResponse.Free;
       http.Free;
+      Application.ProcessMessages;
       edtQuery.Enabled:= True;
       actTPBQuery.Enabled:= True;
-      Application.ProcessMessages;
     end;
   end;
 end;
