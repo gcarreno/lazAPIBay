@@ -140,6 +140,10 @@ procedure TfrmMain.lbListSelectionChange(Sender: TObject; User: boolean);
 var
   QueryItem: TQueryItem;
 begin
+  if not panData.Visible then
+  begin
+    panData.Visible:= True;
+  end;
   QueryItem:= FQuery[lbList.ItemIndex];
   lblId.      Caption:= Format('Id: %d', [QueryItem.Id]);
   lblName.    Caption:= Format('Name: %s', [QueryItem.Name]);
@@ -148,8 +152,12 @@ begin
   lblSeeders. Caption:= Format('Seeders: %d', [QueryItem.Seeders]);
   lblSize.    Caption:= Format('Size: %s', [fmtSize(QueryItem.Size)]);
   lblUsername.Caption:= Format('Username: %s', [QueryItem.Username]);
-  lblAdded.   Caption:= Format('Added: %s', [
-    FormatDateTime('yyyy/mm/dd hh:nn:ss', QueryItem.Added)]);
+  lblAdded.   Caption:= Format(
+    'Added: %s',
+    [
+      FormatDateTime('yyyy/mm/dd hh:nn:ss', QueryItem.Added)
+    ]
+  );
   lblStatus.  Caption:= Format('Status: %s', [QueryItem.Status]);
   lblCategory.Caption:= Format('Category: %d', [QueryItem.Category]);
   lblIMDB.    Caption:= Format('IMDB: %s', [QueryItem.IMDB]);

@@ -1,78 +1,90 @@
 object frmMain: TfrmMain
   Left = 338
-  Height = 567
+  Height = 500
   Top = 250
-  Width = 1012
+  Width = 800
   Caption = 'lazAPIBay Example'
-  ClientHeight = 567
-  ClientWidth = 1012
+  ClientHeight = 500
+  ClientWidth = 800
+  Constraints.MinHeight = 500
+  Constraints.MinWidth = 800
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  LCLVersion = '2.3.0.0'
   object panQuery: TPanel
     Left = 0
-    Height = 44
+    Height = 43
     Top = 0
-    Width = 1012
+    Width = 800
     Align = alTop
-    ClientHeight = 44
-    ClientWidth = 1012
+    AutoSize = True
+    ClientHeight = 43
+    ClientWidth = 800
     TabOrder = 0
     object edtQuery: TEdit
-      Left = 0
+      Left = 5
       Height = 33
-      Top = 8
+      Top = 5
       Width = 504
+      Align = alLeft
+      BorderSpacing.Left = 4
+      BorderSpacing.Top = 4
+      BorderSpacing.Bottom = 4
       OnKeyPress = edtQueryKeyPress
       TabOrder = 0
     end
     object btnTPBQuery: TButton
-      Left = 504
-      Height = 32
-      Top = 8
+      Left = 513
+      Height = 33
+      Top = 5
       Width = 75
       Action = actTPBQuery
+      Align = alLeft
+      BorderSpacing.Left = 4
+      BorderSpacing.Top = 4
+      BorderSpacing.Bottom = 4
       TabOrder = 1
     end
   end
   object psMain: TPairSplitter
     Cursor = crDefault
     Left = 0
-    Height = 523
-    Top = 44
-    Width = 1012
+    Height = 457
+    Top = 43
+    Width = 800
     Align = alClient
-    Position = 350
+    Position = 265
     SplitterType = pstVertical
     object pssQueryItems: TPairSplitterSide
       Cursor = crArrow
       Left = 0
-      Height = 350
+      Height = 265
       Top = 0
-      Width = 1012
-      ClientWidth = 1012
-      ClientHeight = 350
+      Width = 800
+      ClientWidth = 800
+      ClientHeight = 265
+      Constraints.MinHeight = 265
       object psQuery: TPairSplitter
         Cursor = crDefault
         Left = 0
-        Height = 350
+        Height = 265
         Top = 0
-        Width = 1012
+        Width = 800
         Align = alClient
         Position = 450
         object pssList: TPairSplitterSide
           Cursor = crArrow
           Left = 0
-          Height = 350
+          Height = 265
           Top = 0
           Width = 450
           ClientWidth = 450
-          ClientHeight = 350
+          ClientHeight = 265
+          Constraints.MinWidth = 450
           object lbList: TListBox
             Left = 0
-            Height = 350
+            Height = 265
             Top = 0
             Width = 450
             Align = alClient
@@ -86,96 +98,141 @@ object frmMain: TfrmMain
         object pssData: TPairSplitterSide
           Cursor = crArrow
           Left = 455
-          Height = 350
+          Height = 265
           Top = 0
-          Width = 557
-          ClientWidth = 557
-          ClientHeight = 350
+          Width = 345
+          ClientWidth = 345
+          ClientHeight = 265
           object panData: TPanel
             Left = 0
-            Height = 350
+            Height = 265
             Top = 0
-            Width = 557
+            Width = 345
             Align = alClient
-            ClientHeight = 350
-            ClientWidth = 557
+            ClientHeight = 265
+            ClientWidth = 345
             TabOrder = 0
+            Visible = False
             object lblId: TLabel
-              Left = 16
-              Height = 17
-              Top = 8
-              Width = 17
+              Left = 17
+              Height = 15
+              Top = 9
+              Width = 327
+              Align = alTop
+              BorderSpacing.Left = 16
+              BorderSpacing.Top = 8
               Caption = 'Id:'
+              ParentColor = False
             end
             object lblName: TLabel
-              Left = 16
-              Height = 17
+              Left = 17
+              Height = 15
               Top = 32
-              Width = 44
+              Width = 327
+              Align = alTop
+              BorderSpacing.Left = 16
+              BorderSpacing.Top = 8
               Caption = 'Name:'
+              ParentColor = False
             end
             object lblHash: TLabel
-              Left = 16
-              Height = 17
-              Top = 56
-              Width = 37
+              Left = 17
+              Height = 15
+              Top = 55
+              Width = 327
+              Align = alTop
+              BorderSpacing.Left = 16
+              BorderSpacing.Top = 8
               Caption = 'Hash:'
+              ParentColor = False
             end
             object lblLeechers: TLabel
-              Left = 16
-              Height = 17
-              Top = 104
-              Width = 63
+              Left = 17
+              Height = 15
+              Top = 101
+              Width = 327
+              Align = alTop
+              BorderSpacing.Left = 16
+              BorderSpacing.Top = 8
               Caption = 'Leechers:'
+              ParentColor = False
             end
             object lblSeeders: TLabel
-              Left = 15
-              Height = 17
-              Top = 80
-              Width = 58
+              Left = 17
+              Height = 15
+              Top = 78
+              Width = 327
+              Align = alTop
+              BorderSpacing.Left = 16
+              BorderSpacing.Top = 8
               Caption = 'Seeders:'
+              ParentColor = False
             end
             object lblSize: TLabel
-              Left = 16
-              Height = 17
-              Top = 128
-              Width = 31
+              Left = 17
+              Height = 15
+              Top = 124
+              Width = 327
+              Align = alTop
+              BorderSpacing.Left = 16
+              BorderSpacing.Top = 8
               Caption = 'Size:'
+              ParentColor = False
             end
             object lblUsername: TLabel
-              Left = 16
-              Height = 17
-              Top = 152
-              Width = 72
+              Left = 17
+              Height = 15
+              Top = 147
+              Width = 327
+              Align = alTop
+              BorderSpacing.Left = 16
+              BorderSpacing.Top = 8
               Caption = 'Username:'
+              ParentColor = False
             end
             object lblAdded: TLabel
-              Left = 16
-              Height = 17
-              Top = 176
-              Width = 49
+              Left = 17
+              Height = 15
+              Top = 170
+              Width = 327
+              Align = alTop
+              BorderSpacing.Left = 16
+              BorderSpacing.Top = 8
               Caption = 'Added:'
+              ParentColor = False
             end
             object lblStatus: TLabel
-              Left = 15
-              Height = 17
-              Top = 200
-              Width = 47
+              Left = 17
+              Height = 15
+              Top = 193
+              Width = 327
+              Align = alTop
+              BorderSpacing.Left = 16
+              BorderSpacing.Top = 8
               Caption = 'Status:'
+              ParentColor = False
             end
             object lblCategory: TLabel
-              Left = 16
-              Height = 17
-              Top = 224
-              Width = 65
+              Left = 17
+              Height = 15
+              Top = 216
+              Width = 327
+              Align = alTop
+              BorderSpacing.Left = 16
+              BorderSpacing.Top = 8
               Caption = 'Category:'
+              ParentColor = False
             end
             object lblIMDB: TLabel
-              Left = 15
-              Height = 17
-              Top = 248
-              Width = 40
+              Left = 17
+              Height = 15
+              Top = 239
+              Width = 327
+              Align = alTop
+              BorderSpacing.Left = 16
+              BorderSpacing.Top = 8
               Caption = 'IMDB:'
+              ParentColor = False
             end
           end
         end
@@ -184,16 +241,16 @@ object frmMain: TfrmMain
     object pssLog: TPairSplitterSide
       Cursor = crArrow
       Left = 0
-      Height = 168
-      Top = 355
-      Width = 1012
-      ClientWidth = 1012
-      ClientHeight = 168
+      Height = 187
+      Top = 270
+      Width = 800
+      ClientWidth = 800
+      ClientHeight = 187
       object memLog: TMemo
         Left = 0
-        Height = 168
+        Height = 187
         Top = 0
-        Width = 1012
+        Width = 800
         Align = alClient
         Font.Name = 'Fira Code'
         ParentFont = False
