@@ -5,7 +5,7 @@ The Torrent Object conatins more details on the torrent.
 ## HTTP Call
 
 ```console
-curl 'https://apibay.org/t.php?id=52427665`
+$ curl 'https://apibay.org/t.php?id=52427665`
 ```
 
 ## Example Response

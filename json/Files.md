@@ -5,7 +5,7 @@ The Files object is a list of the files contained inside the torrent.
 ## HTTP Call
 
 ```console
-culr 'https://apibay.org/f.php?id=52427665'
+$ culr 'https://apibay.org/f.php?id=52427665'
 ```
 
 ## Example Response
