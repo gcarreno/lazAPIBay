@@ -1,4 +1,4 @@
-# The Tottent Object
+# The Torrent Object
 
 The Torrent Object conatins more details on the torrent.
 
